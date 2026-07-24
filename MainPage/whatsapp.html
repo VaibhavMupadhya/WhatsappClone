@@ -1,0 +1,763 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whatsapp.com</title>
+  <link rel="stylesheet" href="whatsapp.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+  />
+
+  </head>
+
+  <body>
+<!-- /* ================================================================================ */ -->
+<!-- ======================================================================================= -->
+
+    <!-- Header -->
+    <div id="header">
+      <div id="appLogo">
+        <img
+          id="logo"
+          src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+          alt="WhatsApp Logo"
+        />
+      </div>
+      <p id="appName">WhatsApp</p>
+    </div>
+
+
+<!-- ======================================================================================= -->
+<!-- ======================================================================================= -->
+
+    <!-- Main container -->
+    <div id="main-container">
+      <!-- Container 1 -->
+      <div id="container1" class="top-right-shadow">
+        <div id="icon-container1">
+          <button class="icon-button" id="chat-btn" data-target="container-msg">
+            <img class="status" src="/imgs/chat_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"></img>
+          </button>
+          <button class="icon-button" id="calls-btn" data-target="container-calls">
+            <img class="icons" src="/imgs/call_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"></img>
+          </button>
+
+          <button class="icon-button" id="status-btn" data-target="container-status">
+            <img class="icons" src="/imgs/donut_large_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"></img>
+          </button>
+
+          <!-- Not available right Now -->
+
+          <!-- <button class="icon-button" id="channels-btn" data-target="container-channels">
+            <img class="icons" src="/imgs/maps_ugc_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"></img>
+          </button> -->
+
+          <!-- Not available right Now -->
+
+          <!-- <button class="icon-button" id="community-btn" data-target="container-community">
+            <img class="icons" src="/imgs/group_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"></img>
+          </button> -->
+        </div>
+        <div id="icon-container2">
+          <button class="icon-button" id="settings-btn" data-target="container-settings">
+            <img class="icons" src="/imgs/settings_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"></img>
+          </button>
+          <button class="icon-button" id="media-btn" onclick="showLoginDialog()" data-target="container-media">
+            <img class="icons" src="/imgs/perm_media_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"></img>
+          </button>
+
+        </div>
+      </div>
+<!-- ======================================================================================= -->
+
+      <!-- Container 2 -->
+
+    <section class="container2">
+
+<!-- ******************************  Chat Page section  ****************************** -->
+
+
+      <div id="container-msg" class="all chats active">
+        <div id="chat-heading-container">
+          <div id="chat-heading-text">Chats</div>
+          <div id ="chat-heading-icons">
+            <button class="chat-icon" id="newChat-btn"><img src="/imgs/chat_add_on_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="new chat"></button>
+              
+            <button class="chat-icon menu-btn" data-menu="msgMenu"><img src="/imgs/more_vert_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="more"></button>
+            
+            <div class="dropdown-menu" id="msgMenu">
+              <div class="menu-item">
+                <span><img src="/imgs/group_add_24dp_FFFFFF_FILL1_wght300_GRAD0_opsz24.svg" alt="#"></span>
+                <button id="newGroup-btn">New group</button>
+              </div>
+              <div class="menu-item">
+                <span><img src="/imgs/groups_24dp_FFFFFF_FILL1_wght300_GRAD0_opsz24.svg" alt="#"></span>
+                <button>New community</button>
+              </div>
+              <div class="menu-item">
+                <span><img src="/imgs/settings_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="#"></span>
+                <button>Settings</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chat-search-container-box">
+          <div id="chat-search-container">
+            <div id="search-icon"><img src="/imgs/search_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="#"></div>
+            <input type="text" placeholder="Search or start new chat" />
+          </div>
+        </div>
+        <!-- filter Section  -->
+        <section id="filter-group-section">
+          <div class="filter-box">
+            <button class="filter-group-button all-filter">All</button>
+          </div>
+          <div class="filter-box">
+            <button class="filter-group-button all-filter">Work</button>
+          </div>
+          <div class="filter-box">
+            <button class="filter-group-button" id="fvt-filter">
+              Favorites
+            </button>
+          </div>
+
+          <!-- Optional -->
+
+          <!-- New filter button -->
+
+          <!-- <div class="filter-box" id="newListMenu">
+            <button class="filter-group-button" id="new-filter">+</button>
+            <div class="newList-item" id="dropdown-menu-list">
+                <span>+</span>
+                <button id="newList-btn">New list</button>
+            </div> 
+          </div> -->
+
+        </section>
+  
+                      <!-- All Chats Container -->
+        <div class="chats-container" id="All-chats">
+          <!-- Chats Section Starts from here -->
+          <div class="chats-box">
+            <div class="chat">
+              <div class="chat-profile">
+                <img src="/imgs/Other-Images/profilePic.jpg" alt="profilePhoto" />
+              </div>
+              <div class="chat-name-box">
+                <h3>Self (you)</h3>
+                <p>Photo</p>
+              </div>
+              <div class="chat-silent-pin-box">
+                <div class="recent-time">yesterday</div>
+              </div>
+            </div>
+          </div>
+            <!-- Chats Section end from here -->
+        </div>
+      </div>
+
+      <!-- All main pages (Start)-->
+
+    <!-- ******************************  Call Page section  ****************************** -->
+      
+       
+      <div id="container-calls" class="all call">
+        <div id="chat-heading-container">
+          <div id="chat-heading-text">Calls</div>
+          <div id ="chat-heading-icons">
+            <button class="chat-icon" id="newCall-btn"><img src="/imgs/add_call_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="new chat"></button>
+          </div>
+        </div>
+        <div class="chat-search-container-box">
+          <div id="chat-search-container">
+            <div id="search-icon"><img src="/imgs/search_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="#"></div>
+            <input type="text" placeholder="Search name or number"/>
+          </div>
+        </div>
+        <div id="calls-recentBox">
+          <h3>Recent</h3>
+        </div>
+        <section class="chats-container">
+          <!-- individual chats -->
+
+          <div class="chats-box">
+            <div class="chat">
+              <div class="chat-profile">
+                <img src="" alt="profilePhoto" />
+              </div>
+              <div class="chat-name-box">
+                <h3>Username2</h3>
+                <p style="color: rgba(250, 0, 0, 0.877);">missed call</p>
+              </div>
+              <div class="chat-silent-pin-box">
+                <div class="recent-time">today</div>
+              </div>
+            </div>
+          </div>
+          <!-- individual chats end -->
+        </section>  
+      </div>
+
+
+      <!-- ******************************  Status Page section  ****************************** -->
+
+      <div id="container-status" class="all status">
+
+    <div id="chat-heading-container">
+          <div id="chat-heading-text">Status</div>
+          <div id ="chat-heading-icons">
+          <button class="chat-icon menu-btn" data-menu="statusMenu1" ><img src="/imgs/add_circle_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="new chat"></button>
+            <div class="dropdown-menu" id="statusMenu1">
+              <div class="menu-item">
+                <span><img src="/imgs/perm_media_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="#"></span>
+                <button>Photos & videos</button>
+              </div>
+              <div class="menu-item">
+                <span><img src="/imgs/perm_media_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="#"></span>
+                <button>Text</button>
+              </div>
+            </div>
+
+            <button class="chat-icon menu-btn" data-menu="statusMenu2"><img src="/imgs/more_vert_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="more"></button>
+            <div class="dropdown-menu" id="statusMenu2">
+              <div class="menu-item">
+                <span><img src="/imgs/perm_media_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="#"></span>
+                <button id="SPrivacyBtn">Status Privacy</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- ******************************  Channels Page section  ****************************** -->
+          <!-- Not available right Now -->
+      
+    <!-- <div id="container-channels" class="all channel" >
+        <h1 style="color: aliceblue; font-size: 50px; ">Channels</h1>
+      </div>
+ -->
+
+
+    <!-- ******************************  Community Page section  ****************************** -->
+
+          <!-- Not available right Now -->
+
+      <!-- <div id="container-community" class="all community">
+        <h1 style="color: aliceblue; font-size: 50px; ">Community</h1>
+      </div> -->
+
+
+    <!-- ****************************** settings Page Container  ****************************** -->
+
+      <div id="container-settings" class="all settings">
+        <!-- Different pages/Tab -->
+      <section class="Stg-Pages" id="Main-Page-Stg">
+          <h2 id="UserNameSettings">Vaibhav.M.Upadhya</h2>
+          <form class="chat-search-container-box" id="searchBoxSettings">
+              <div id="chat-search-container">
+                <div id="search-icon"><img src="/imgs/search_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="#"></div>
+                <input type="text" placeholder="Search name or number"/>
+              </div>
+          </form>
+          <section class="editProfileImgSec">
+            <div class="editProfileImgBox" id="editImgPageBtn" >
+              <img src="/imgs/Other-Images/profilePic.jpg" alt="Profile-Image">
+            </div>
+            <button id="editImgPageBtn2">Edit</button>
+          </section>
+          <section id="optList-stg">
+            <button class="stgBtns">
+              <span><img src="/imgs/key_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="keyImg" style="opacity: 0.6;"></span>
+            <div>
+            Account
+            <p>Security notifications,change number</p>
+            </div>
+            </button>
+
+            <button class="stgBtns">
+              <span><img src="/imgs/profile-user-svgrepo-com.svg" alt="profileImg"></span>
+            <div>
+            Edit Profile
+            <p>Name about, username</p>
+            </div>
+            </button>
+            <button class="stgBtns">
+              <span><img src="/imgs/add_notes_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="addImg" style="opacity: 0.6;"></span>
+            <div>
+            Lists
+            <p>Manage People and groups</p>
+            </div>
+            </button>
+            <button class="stgBtns">
+              <span><img src="/imgs/notifications_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="addListImg" style="opacity: 0.6;"></span>
+            <div>
+            Notifications
+            <p>Message, group & call tones</p>
+            </div>
+            </button>
+            <button class="stgBtns">
+              <span><img src="/imgs/lock_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="palletteImg" style="opacity: 0.6;"></span>
+            <div>
+            Privacy
+            <p>App Lock, disappearing messages</p>
+            </div>
+            </button>
+            <button class="stgBtns">
+              <span><img src="/imgs/palette_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="palletteImg" style="opacity: 0.6;"></span>
+            <div>
+            Appearance
+            <p>Chat theme, app icon, app theme</p>
+            </div>
+            </button>
+          </section>
+          <center><hr style="width: 90%; opacity: 0.5; border-radius: 20px;"></center>
+          <section class="aboutSect-stg">
+            <span style="font-size: 24px;"><b>More About Us!</b></span>
+            <p id="p1Stg">
+              Developer Name : Vaibhav.M.Upadhya <br>
+              GitHub : <br>
+              E-mail : upadhyavaibhav225@gmail.com <br>
+            </p>
+            <br>
+            <center><hr style="width: 90%; opacity: 0.5; border-radius: 20px;"></center><br>
+            <span style="font-size: 20px;"><b>Share your experience :</b></span>
+            <p id="p2Stg">
+              <button><img src="/imgs/feedback_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24 (1).svg" alt="feedbackImg">Give feedback!</button>
+            </p>
+            <center><hr style="width: 90%; opacity: 0.5; border-radius: 20px;"></center><br>
+              <button id="logOutBtn-Stg"><img src="/imgs/logout_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="">Log Out</button>
+          </section>
+        </section>      
+
+                            <!-- Edit profile Page -->
+
+        <section class="Stg-Pages sPages" id="editProfile-Page-Stg">
+          <div class="newChtCtn">
+          <div class ="-heading-icons">
+            <button class="chat-icon menu-btn" id="reverse-btnStg" data-target="container-msg"><img src="/imgs/arrow_back_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="more"></button>   
+          </div>
+          <div class="-heading-text">Edit Profile</div>
+        </div>
+
+        <section class="editProfileImgSec">
+            <div class="editProfileImgBox" id="imagePreviewContainer" >
+              <img src="/imgs/Other-Images/profilePic.jpg" alt="" >
+            </div>
+          </section>
+          <div class="addProfileBtnCont">
+            <button class="addProfileBtn" id="uploadBtn"><img src="/imgs/photo_camera_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="">Add</button>
+            <input type="file" id="hiddenFileInput" accept="image/*" style="display: none;">
+            <button class="addProfileBtn" id="removeBtn"><img src="/imgs/delete_24dp_D16D6A_FILL0_wght400_GRAD0_opsz24 (1).svg" alt="">Remove</button>
+          </div>
+        </section>
+      </div>
+
+      <!-- All main pages (end)-->
+      
+
+    <!-- ****************************** New Chat  Page section  ****************************** -->
+
+    
+      <section id="container-newChat" class="all newChatContainer">
+        
+        <div class="newChtCtn">
+          <div class ="-heading-icons">
+            <button class="chat-icon menu-btn" id="reverse-btn" data-target="container-msg"><img src="/imgs/arrow_back_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="more"></button>   
+          </div>
+          <div class="-heading-text">New chat</div>
+        </div>
+        <div class="chat-search-container-box">
+          <div id="chat-search-container">
+            <div id="search-icon"><img src="/imgs/search_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="#"></div>
+            <input type="text" placeholder="Search name or number"/>
+          </div>
+        </div>  
+
+        <section class="chats-container">
+          <div class="chats-box">
+            <div id="new-gp-box">
+              <div class="chat-profile" id="new-gp-icon">
+                <img src="/imgs/group_add_24dp_FFFFFF_FILL1_wght300_GRAD0_opsz24.svg" alt="profilePhoto" />
+              </div>
+              <div class="chat-name-box" id="new-gp-heading">
+                <h3>New group</h3>
+              </div>
+            </div>
+          </div>          
+          <div class="chats-box" id="new-contact" data-target="newContactPage">
+            <div id="new-gp-box">
+              <div class="chat-profile" id="new-gp-icon">
+                <img src="/imgs/person_add_24dp_FFFFFF_FILL1_wght300_GRAD0_opsz24.svg" alt="profilePhoto" />
+              </div>
+              <div class="chat-name-box" id="new-gp-heading">
+                <h3>New contact</h3>
+              </div>
+            </div>
+          </div>          
+          <div class="chats-box">
+            <div id="new-gp-box">
+              <div class="chat-profile" id="new-gp-icon">
+                <img src="/imgs/group_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="profilePhoto" />
+              </div>
+              <div class="chat-name-box" id="new-gp-heading">
+                <h3>New community</h3>
+              </div>
+            </div>
+          </div>
+          <!-- individual chats end -->
+        </section>  
+    
+      </section>
+  
+    <!-- ***************************************************************************************** -->
+     
+                            <!-- new group container page -->
+    
+      <div id="container-newGroup" class="all newGroupContainer">
+        <h1 style="color: aliceblue; font-size: 50px; ">New group</h1>
+      </div>
+<!-- end -->
+
+      <!-- New List container page -->
+       <div id="container-newList" class="all newListContainer">
+        <h1 style="color: aliceblue; font-size: 50px; ">New List</h1>
+       </div>
+       <!-- New call container page -->
+       <div id="container-newCall" class="all newCallContainer">
+        <h1 style="color: aliceblue; font-size: 50px; ">New Call</h1>
+       </div>
+       <!--status privacy container page-->
+       <div id="container-statusPrivacy" class="all statusPrivacyContainer">
+        <h1 style="color: aliceblue; font-size: 50px; ">Status privacy </h1>
+       </div>
+
+                       <!-- New Contact Page  newContactPage -->
+
+       <div id="container-newContactPage" class="all newcontactPage">
+
+        <div class="newChtCtn">
+          <div class ="-heading-icons">
+            <button class="chat-icon menu-btn" id="contact-reverse-btn" data-target="container-msg"><img src="/imgs/arrow_back_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="more"></button>   
+          </div>
+          <div class="-heading-text">New Contact</div>
+        </div>
+        <section id="input-section-NC">
+          <span>
+            <img src="/imgs/group_add_24dp_FFFFFF_FILL1_wght300_GRAD0_opsz24.svg" alt="">
+            <input type="text" placeholder="First name" required id="firstName-NC" name="firstName">
+          </span>
+          <span id="span2-NC"> 
+            <input type="text" placeholder="Last name" required id="lastName-NC" name="lastName">
+          </span>
+          <span id="span3-NC">
+            <img src="/imgs/call_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+            <p>+91</p>
+            <input type="tel" placeholder="Enter 10-digit phone number" pattern="[0-9]{10}" maxlength="10" required id="phoneNo-NC" name="phoneNumber">
+          </span>
+            <span id="btn-span-NC">
+              <button id="clear-btn-NC">Cancel</button>
+              <button id="submit-btn-NC">Create</button>
+            </span>
+        </section>
+      </div>
+      </section>
+
+
+    
+<!-- /* ================================================================================ */ -->
+
+
+                                      <!-- Container 3 -->
+
+      <div id="container3">
+  <section id="chat-empty-window" style="display: none;">
+    <div class="boxContainerEP">
+
+      <div class="boxesEPBtnCont">
+        <input
+        type="file"
+        id="fileInput"
+        hidden
+        multiple>
+        <button class="boxesEPBtn" id="sendDocumentBtn">
+          <img src="/imgs/file_export_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="Send Document">
+        </button>
+        <p class="boxesEPtxt">Send Document</p>
+      </div>
+
+      <div class="boxesEPBtnCont">
+        <button class="boxesEPBtn" id="new-contactEp">
+          <img src="/imgs/person_add_24dp_FFFFFF_FILL1_wght300_GRAD0_opsz24.svg" alt="Add Contact">
+        </button>
+        <p class="boxesEPtxt">Add Contact</p>
+      </div>
+
+      <div class="boxesEPBtnCont">
+        <button class="boxesEPBtn">
+          <img src="/imgs/donut_large_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="Add Status">
+        </button>
+        <p class="boxesEPtxt">Add Status</p>
+      </div>
+
+    </div>
+  </section>
+                          <!-- ********** -->
+
+
+        <section class="chat-window" id="chatWindowId">
+
+          <div id="chatPageBoxCw">  
+
+            <nav class="navBar-Cw">
+
+                <div class="ProfileImg-nav" id="profileNav">
+                  <span>
+                  <img src="/imgs/Other-Images/profilePic.jpg" alt="">    
+                  </span>
+                </div>
+                <div class="personName-navCw" id="personNameNav">
+                  <h3 class="name-nav">Vaibhav</h3>
+                  <p class="name-nav">click here for contact info</p>
+                </div>
+                <div class="navBtnsBoxCw">
+                  <button class="navBtnsCw"><img src="/imgs/video_camera_back_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="video call"></button>
+                  <button class="navBtnsCw"><img src="/imgs/call_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="Call"></button>
+                  <button class="navBtnsCw" id="profileSearch"><img src="/imgs/search_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="Search chat"></button>
+                  <button class="navBtnsCw" id="mainMoreBtn"><img src="/imgs/more_vert_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="more"></button>
+                  
+                  <div class="moreMenu-Cw" id="mainMorebtn-Cw">
+                      <button class="moreOpt2Btns">New group</button>
+                      <hr width="100%" style="height:1px; background-color: #ffffff67; border: none; margin: 2px 0;">
+                      <button class="moreOpt2Btns">Search</button>
+                      <button class="moreOpt2Btns">Mute Notification</button>
+                      <button class="moreOpt2Btns">Chat theme</button>
+                      <hr width="100%" style="height:1px; background-color: #ffffff67; border: none; margin: 2px 0;">
+                      <button class="moreOpt2Btns" id="subMoreBtn">More</button>
+                  </div>
+                  <div class="moreMenu-Cw subMoreMenu" id="subMorebtn-Cw">
+                      <button class="moreOpt2Btns">Report</button>
+                      <button class="moreOpt2Btns">Black</button>
+                      <button class="moreOpt2Btns">Clear chat</button>
+                      <button class="moreOpt2Btns">Add to list</button>
+                  </div>
+                </div>
+            </nav>
+            
+            <!-- Chats -->
+
+            <div class="chat-bodyCw">
+              <div class="ChatBodyContainer" id="ChatBodyContainerId">
+                
+              <!-- Individual sent Message -->
+                <div class="sentMsgBox BothMsgBox">
+                  <div class="sentMsg BothMsg">
+                    <p>Lorem, ipsum dol</p>
+                    <div class="timingSeenBx">
+                      <span class="sentTime">12:45</span>
+                      <div class="seen">
+                        <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+                <!-- Individual recived Message -->
+                  <div class="recivedMsgBox BothMsgBox">
+                    <div class="recivedMsg BothMsg">
+                      <p>Heyy...</p>
+                    <div class="timingSeenBx">
+                      <span class="sentTime">12:45</span>
+                      <div class="seen">
+                        <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+
+                <!-- Individual recived image -->
+                  <div class="recivedMsgBox BothMsgBox">
+                    <div class="recivedImg bothImg">
+                      <span class="ImgBoxSI"><img src="/imgs/Other-Images/sun-boat-reflection.jpg" alt="">
+                      </span>
+                      <div class="timeSeenBox">
+                        <span class="sentTime">12:45</span>
+                        <div class="seen">
+                          <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <!-- Individual recived image -->
+                  <div class="sentMsgBox BothMsgBox">
+                    <div class="sentImg bothImg">
+                      <span class="ImgBoxSI"><img src="/imgs/Other-Images/profilePic.jpg" alt="">
+                      </span>
+                      <div class="timeSeenBox">
+                        <span class="sentTime">12:45</span>
+                        <div class="seen">
+                          <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+              </div>
+            <!-- ****** -->
+
+            <div class="searchBarCw">
+
+              <div class="attachMenu">
+                <button><span><img src="/imgs/file_export_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt=""></span> Document</button>
+                <button><span><img src="/imgs/perm_media_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt=""></span> Photos</button>
+                <button><span><img src="/imgs/photo_camera_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt=""></span> Camera</button>
+                <button><span><img src="/imgs/call_made_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt=""></span> Audio</button>
+              </div>
+
+              <div class="typeBarMsg">
+                <button id="attachBtn"><img src="/imgs/more_vert_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="more"></button>
+                <!-- <div class="attachMenu">hello</div> -->
+                <input type="text" name="inputMsg" id="MsgInput" placeholder="Message">
+              </div>
+              <button type="submit" id="sendMsgBtn"><img src="/imgs/send_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="send msg"></button>
+            </div>
+          </div>
+                              <!-- Profile Page Side Bar -->
+
+          <aside class="profilePageClass hidden" id="profilePage">
+              <div class="sectionPw part1" id="profileSec">
+                <nav class="navBar-Pw">
+                  <button class="CloseBtn" id="closeBtnPw">
+                    <img src="/imgs/close_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                  </button>
+                  <h3>Contact Info</h3>
+                </nav>  
+                <section class="profile-photo-section">
+                  <div class="profilePhotoBox" id="openChatListDialog">
+                    <img src="/imgs/Other-Images/profilePic.jpg" alt="">
+                  </div>                  
+                  <h2 class="profileNameC" id="profileNameI">Vaibhav M Upadhya</h2>
+                  <p class="profilePhNumC" id="profilePhNumI">+91 <span>9972949986</span></p>
+                  <div class="profilePhotoBtnBox">
+                    <button><img src="/imgs/call_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="VoiceCall"></button>
+                    <button><img src="imgs/video_camera_back_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="VideoCall"></button>
+                    <button id="profileSearch2"><img src="/imgs/search_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="searchMsg"></button>
+                    <p>Voice</p>
+                    <p>Video</p>
+                    <p>Search</p>
+                  </div>
+                </section>
+                <hr class="expand-line">
+                <section class="manipulateProfileC">
+                  <button>
+                    <span><img src="/imgs/favorite_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt=""></span>
+                    <p>Add to favourites</p>
+                  </button>
+                  <button>
+                    <span><img src="/imgs/add_notes_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt=""></span>
+                    <p>Add to list</p>
+                  </button>
+                  <button id="clearChat">
+                    <span><img src="/imgs/do_not_disturb_on_24dp_D16D6A_FILL0_wght400_GRAD0_opsz24.svg" alt=""></span>
+                    <p class="redContent">Clear chat</p>
+                  </button>
+                  <dialog id="clearChatDialog">
+                    <div id="clearChatDialogBox">
+                      <h3>&#9888; Confirm to Clear Chat :</h3>
+                      <p> &#10060; This will permanently remove all messages from this chat.</p>
+                      <div class="dialogBtns">
+                        <button id="cancelClearBtn">Cancel</button>
+                        <button id="confirmClearBtn">Confirm </button>
+                      </div>
+                      </div>
+                      </dialog>
+                  <button>
+                    <span>
+                      <img src="/imgs/block_24dp_D16D6A_FILL0_wght400_GRAD0_opsz24.svg" alt="block">
+                    </span>
+                    <p class="redContent">Block<div id="personName">vaibhav M Upadhya</div></p>
+                  </button>
+                  <button>
+                    <span><img src="/imgs/delete_24dp_D16D6A_FILL0_wght400_GRAD0_opsz24 (1).svg" alt=""></span>
+                    <p class="redContent">Delete chat</p>
+                  </button>
+                </section>
+              </div>
+
+              <!-- Search Message page in Side bar Profile container -->
+
+              <div class="sectionPw2 part2" id="searchMsgSec">
+                <section class="sectionPw2-navbar">
+                  <button id="closePart2Btn"><img src="/imgs/arrow_back_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt=""></button>
+                </section>
+                <section class="part2SearchBox">
+
+                  <div class="chat-search-container-box">
+                    <div id="chat-search-container" >
+                      <div id="search-icon"><img src="/imgs/search_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="#">
+                      </div>
+                      <input type="text" placeholder="Search or start new chat" />
+                    </div>
+                  </div>
+                </section>
+              </div>
+          </aside>
+        </section>
+      </div>
+    </div>
+  <!-- </div> -->
+<!-- ======================================================================================= -->
+<!-- ======================================================================================= -->
+
+    <!-- Media Page Section -->
+    
+    <dialog id="newChatDialog" >
+      <nav id="navbar-mediaPage">
+        <div class="MNHBx">
+          <h3>Media</h3>
+          <nav>Media from all chats</nav>
+        </div>
+        <div class="MNSBx">
+          <div id="Media-SearchBar">
+            <div id="search-icon"><img src="/imgs/search_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="#"></div>
+            <input type="text" placeholder="Search media"/>
+            <div id="clear-search-btn"><button>
+              <img src="/imgs/close_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="clear search">
+            </button></div>
+          </div>
+        </div>
+        <div class="MNBBx">        
+          <button id="close-media-page" onclick="closeLoginDialog()"><img src="/imgs/close_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="close window"></button>
+        </div>  
+      </nav>
+      <section id="main-media-body"></section>
+    </dialog>
+
+                              <!-- Chat List Dialog Box -->
+
+    <dialog id="chatListdialogBx">
+      <div class="chatListDialog-content">
+        <nav>
+        <button id="closeChatListDialog"><img src="/imgs/close_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt=""></button>
+        </nav>
+        <div id="profileImgBoxCDL">
+          <span>
+          <img src="/imgs/Other-Images/profilePic.jpg" alt="">
+           </span>
+        </div>
+      </div>
+    </dialog>
+    <dialog>
+      <h1>Helloo !! </h1>
+    </dialog>
+    
+<!-- ======================================================================================= -->
+<!-- ==============================================================================================-->
+
+     <script src="whatsapp.js"></script>
+     <script src="chatsMecanisum.js"></script>
+     <script src="Chatpage.js"></script>
+     <script src="settingPage.js"></script>
+  </body>
+</html>
